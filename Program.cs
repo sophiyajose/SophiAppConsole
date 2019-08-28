@@ -1,4 +1,5 @@
 ﻿using System;
+using SophiAppConsole.Helpers;
 
 namespace SophiAppConsole
 {
@@ -25,18 +26,22 @@ namespace SophiAppConsole
             switch (operation)
             {
                 case "+":
+                    result = MathHelper.Add(value1, value2);
                     result = value1 + value2;
                     break;
                 case "-":
-                    result = value1 - value2;
+                    result=MathHelper.Subtract(value1, value2);
+                    //result = value1 - value2;
                     break;
                 case "*":
-                    result = value1 * value2;
+                    result = MathHelper.Multiplication(value1, value2);
+                    // result = value1 * value2;
                     break;
                 case "/":
                     if (value2 != 0)
                     {
-                        result = value1 / value2;
+                        result = MathHelper.Division(value1, value2);
+                        //result = value1 / value2;
 
                     }
                     break;
@@ -47,7 +52,7 @@ namespace SophiAppConsole
             }
             else
             {
-                Console.WriteLine("Result: {0}", result);
+                Console.WriteLine("Result: {0}",result);
             }
         }
 
